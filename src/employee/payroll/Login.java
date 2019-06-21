@@ -75,7 +75,7 @@ public class Login extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         txt_combo = new javax.swing.JComboBox<>();
         txt_username = new javax.swing.JTextField();
-        txt_password = new javax.swing.JTextField();
+        txt_password = new javax.swing.JPasswordField();
         jLabel5 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -116,8 +116,13 @@ public class Login extends javax.swing.JFrame {
         jButton1.setBounds(70, 420, 65, 32);
 
         txt_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Admin", "Sales" }));
+        txt_combo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_comboActionPerformed(evt);
+            }
+        });
         jPanel1.add(txt_combo);
-        txt_combo.setBounds(150, 380, 170, 26);
+        txt_combo.setBounds(150, 386, 170, 30);
 
         txt_username.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -125,9 +130,9 @@ public class Login extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txt_username);
-        txt_username.setBounds(150, 300, 170, 24);
+        txt_username.setBounds(150, 300, 170, 30);
         jPanel1.add(txt_password);
-        txt_password.setBounds(150, 340, 170, 24);
+        txt_password.setBounds(150, 340, 170, 30);
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/employee/payroll/images/bk3.jpg"))); // NOI18N
         jLabel5.setText("jLabel5");
@@ -214,6 +219,10 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_usernameActionPerformed
 
+    private void txt_comboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_comboActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_comboActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -262,7 +271,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JMenu lbl_date;
     private javax.swing.JMenu lbl_time;
     private javax.swing.JComboBox<String> txt_combo;
-    private javax.swing.JTextField txt_password;
+    private javax.swing.JPasswordField txt_password;
     private javax.swing.JTextField txt_username;
     // End of variables declaration//GEN-END:variables
 }
