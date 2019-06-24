@@ -185,6 +185,8 @@ public class Login extends javax.swing.JFrame {
             while(rs.next()){
                 int id = rs.getInt(1);
                 Emp.empID = id;
+                String username = rs.getString("username");
+                Emp.empname = username;
                 count = count + 1;    
             }
             String access = txt_combo.getSelectedItem().toString();

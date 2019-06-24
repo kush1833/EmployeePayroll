@@ -23,7 +23,7 @@ public class MainMenu extends javax.swing.JFrame {
         Dimension size = toolkit.getScreenSize();
         setLocation(size.width/2 - getWidth()/2, size.height/2 - getHeight()/2);
         
-        lbl_emp.setText(String.valueOf(Emp.empID).toString());
+        lbl_emp.setText(String.valueOf(Emp.empname).toString());
         
     }
 
