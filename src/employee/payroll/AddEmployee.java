@@ -77,20 +77,21 @@ public class AddEmployee extends javax.swing.JFrame {
         jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         txt_pin = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btn_add = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         r_female = new javax.swing.JRadioButton();
         r_male = new javax.swing.JRadioButton();
-        jButton2 = new javax.swing.JButton();
+        btn_clear = new javax.swing.JButton();
         jDesktopPane1 = new javax.swing.JDesktopPane();
         img = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        btn_addImage = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         btn_delete = new javax.swing.JButton();
         btn_search = new javax.swing.JButton();
         txt_delete = new javax.swing.JTextField();
         txt_search = new javax.swing.JTextField();
+        btn_update = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -142,10 +143,10 @@ public class AddEmployee extends javax.swing.JFrame {
 
         jLabel28.setText("PIN Code:");
 
-        jButton1.setText("ADD RECORD");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btn_add.setText("ADD RECORD");
+        btn_add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btn_addActionPerformed(evt);
             }
         });
 
@@ -165,10 +166,10 @@ public class AddEmployee extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("CLEAR FIELDS");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btn_clear.setText("CLEAR FIELDS");
+        btn_clear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btn_clearActionPerformed(evt);
             }
         });
 
@@ -191,10 +192,10 @@ public class AddEmployee extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jButton3.setText("ADD IMAGE");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btn_addImage.setText("ADD IMAGE");
+        btn_addImage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btn_addImageActionPerformed(evt);
             }
         });
 
@@ -213,6 +214,13 @@ public class AddEmployee extends javax.swing.JFrame {
         btn_search.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_searchActionPerformed(evt);
+            }
+        });
+
+        btn_update.setText("UPDATE DATA");
+        btn_update.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_updateActionPerformed(evt);
             }
         });
 
@@ -285,16 +293,18 @@ public class AddEmployee extends javax.swing.JFrame {
                                                 .addComponent(txt_email, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))))))))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(389, 389, 389)
-                        .addComponent(jButton1)
+                        .addComponent(btn_add)
                         .addGap(27, 27, 27)
-                        .addComponent(jButton2)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 142, Short.MAX_VALUE)
+                        .addComponent(btn_clear)))
+                .addGap(18, 18, 18)
+                .addComponent(btn_update)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(116, 116, 116))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton3)
+                        .addComponent(btn_addImage)
                         .addGap(187, 187, 187))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(87, 87, 87)
@@ -309,7 +319,7 @@ public class AddEmployee extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btn_delete)
                     .addComponent(btn_search))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(705, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -388,11 +398,12 @@ public class AddEmployee extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton1)
-                            .addComponent(jButton2)))
+                            .addComponent(btn_add)
+                            .addComponent(btn_clear)
+                            .addComponent(btn_update)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jButton3)))
+                        .addComponent(btn_addImage)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -420,44 +431,70 @@ public class AddEmployee extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_idActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btn_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addActionPerformed
          // TODO add your handling code here:
-         try { 
-             String sql ="insert into Staff_information " + "(first_name,surname,Dob,Email," + "Contact,Address1,Department," + "Image,Salary,Gender,Address2," + "PIN, Designation,Status,job_title,Date_hired) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ";
-             pst=con.prepareStatement(sql); 
-             pst.setString(1,txt_firstname.getText());
-             pst.setString(2,txt_lastname.getText());
-             pst.setString(3,txt_dob.getText()); 
-             pst.setString(4,txt_email.getText()); 
-             pst.setString(5,txt_contact.getText()); 
-             pst.setString(6,txt_address1.getText()); 
-             pst.setString(7,txt_dept.getText());
-             pst.setBytes(8, person_image);
-             pst.setString(9,txt_basicSal.getText());
-             pst.setString(10, gender);
-             pst.setString(11,txt_address2.getText());
-             pst.setString(12,txt_pin.getText());
-             pst.setString(13,txt_desig.getText());
-             pst.setString(14,txt_status.getText());
-             pst.setString(15,txt_jobTitle.getText());
-             pst.setString(16,txt_hireDate.getText());
+         int x = JOptionPane.showConfirmDialog(null, "Are you sure you want to add record?","Add record",JOptionPane.YES_NO_OPTION);
+         if(x==0){
+            try { 
+                String sql ="insert into Staff_information " + "(first_name,surname,Dob,Email," + "Contact,Address1,Department," + "Image,Salary,Gender,Address2," + "PIN, Designation,Status,job_title,Date_hired) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ";
+                pst=con.prepareStatement(sql); 
+                pst.setString(1,txt_firstname.getText());
+                pst.setString(2,txt_lastname.getText());
+                pst.setString(3,txt_dob.getText()); 
+                pst.setString(4,txt_email.getText()); 
+                pst.setString(5,txt_contact.getText()); 
+                pst.setString(6,txt_address1.getText()); 
+                pst.setString(7,txt_dept.getText());
+                pst.setBytes(8, person_image);
+                pst.setString(9,txt_basicSal.getText());
+                pst.setString(10, gender);
+                pst.setString(11,txt_address2.getText());
+                pst.setString(12,txt_pin.getText());
+                pst.setString(13,txt_desig.getText());
+                pst.setString(14,txt_status.getText());
+                pst.setString(15,txt_jobTitle.getText());
+                pst.setString(16,txt_hireDate.getText());
 
-             pst.execute();
-             JOptionPane.showMessageDialog(null,"Data is saved successfully"); 
-         }
-         catch (Exception e) {
-             JOptionPane.showMessageDialog(null,e);
-         } 
-         finally { 
-             try{
-                 rs.close(); 
-                 pst.close(); 
-             }
-             catch(Exception e){
-                 JOptionPane.showMessageDialog(null,e); 
-             }
-         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+                pst.execute();
+                JOptionPane.showMessageDialog(null,"Data is saved successfully"); 
+            }
+            catch (Exception e) {
+                JOptionPane.showMessageDialog(null,e);
+            } 
+            try{
+                String query = "select * from Staff_information where (id) not in (select id from Users)";
+                pst=con.prepareStatement(query);
+                rs = pst.executeQuery();
+
+                while(rs.next()){
+                    String add1=rs.getString("id");
+                    String add2=rs.getString("first_name");
+                    String add3=rs.getString("Dob");
+                    String username=add2+add1;
+                    String password=add1 + add3.replace("/", add1);
+                    String add4=rs.getString("Department");
+
+                    String q="insert into Users (id,username,password,division) values ('"+add1+"','"+username+"','"+password+"','"+add4+"')";
+                    pst=con.prepareStatement(q);
+                    pst.execute();
+
+                    JOptionPane.showMessageDialog(null, "User Account has been created successfully\nUsername : "+username+"\nPassword : "+password);
+                }
+            }
+            catch(Exception e){
+                JOptionPane.showMessageDialog(null, e);
+            }
+            finally { 
+                try{
+                    rs.close(); 
+                    pst.close(); 
+                }
+                catch(Exception e){
+                    //JOptionPane.showMessageDialog(null,e); 
+                }
+            }
+        }
+    }//GEN-LAST:event_btn_addActionPerformed
 
     private void txt_address2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_address2ActionPerformed
         // TODO add your handling code here:
@@ -481,7 +518,7 @@ public class AddEmployee extends javax.swing.JFrame {
         r_female.setSelected(false);
     }//GEN-LAST:event_r_maleActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btn_clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_clearActionPerformed
         // TODO add your handling code here:
         txt_firstname.setText("");
         txt_lastname.setText("");
@@ -502,9 +539,9 @@ public class AddEmployee extends javax.swing.JFrame {
         txt_hireDate.setText("");
         txt_id.setText("");
         person_image = null;
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btn_clearActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btn_addImageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addImageActionPerformed
         // TODO add your handling code here:
         JFileChooser chooser = new JFileChooser();
         chooser.showOpenDialog(null);
@@ -528,29 +565,32 @@ public class AddEmployee extends javax.swing.JFrame {
         catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
         }
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btn_addImageActionPerformed
 
     private void btn_deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_deleteActionPerformed
         // TODO add your handling code here:
-        try{
-            String Id = txt_delete.getText();
-            String query = "delete from Staff_information where id=? ";
-            pst = con.prepareStatement(query);
-            pst.setString(1, Id);
-            rs = pst.executeQuery();
-            
-            JOptionPane.showMessageDialog(null, "Employee details deleted");
-            
-        }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(null, e);
-        }
-        finally{
+        int x = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete the record?","Delete record",JOptionPane.YES_NO_OPTION);
+        if(x==0){
             try{
-                rs.close();
-                pst.close();
+                String Id = txt_delete.getText();
+                String query = "delete from Staff_information where id=? ";
+                pst = con.prepareStatement(query);
+                pst.setString(1, Id);
+                pst.execute();
+
+                JOptionPane.showMessageDialog(null, "Employee details deleted");
+
             }
-            catch(Exception e){}
+            catch(Exception e){
+                JOptionPane.showMessageDialog(null, e);
+            }
+            finally{
+                try{
+                    rs.close();
+                    pst.close();
+                }
+                catch(Exception e){}
+            }
         }
     }//GEN-LAST:event_btn_deleteActionPerformed
 
@@ -584,8 +624,9 @@ public class AddEmployee extends javax.swing.JFrame {
             byte[] image = rs.getBytes("Image"); 
             ImageIcon imageIcon = new ImageIcon(new ImageIcon(image).getImage().getScaledInstance(img.getWidth(), img.getHeight(), Image.SCALE_SMOOTH)); img.setIcon(imageIcon); 
         }
+        catch(NullPointerException npe){}
         catch(Exception e){
-            JOptionPane.showMessageDialog(null, e);
+            JOptionPane.showMessageDialog(null, "Record does not exist");
         }
         finally{
             try{
@@ -595,6 +636,45 @@ public class AddEmployee extends javax.swing.JFrame {
             catch(Exception e){}
         }
     }//GEN-LAST:event_btn_searchActionPerformed
+
+    private void btn_updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_updateActionPerformed
+        // TODO add your handling code here:
+        int x = JOptionPane.showConfirmDialog(null, "Are you sure you want to update record?","Update Record",JOptionPane.YES_NO_OPTION);
+        if(x==0){
+            try{
+                String v1,v2,v3,v4,v5,v6,v7,v8,v9,v10,v11,v12,v13,v14,v15;
+                v1 = txt_id.getText();
+                v2 = txt_firstname.getText();
+                v3 = txt_lastname.getText();
+                v4 = txt_dob.getText();
+                v5 = txt_email.getText();
+                v6 = txt_contact.getText();
+                v7 = txt_address1.getText();
+                v8 = txt_dept.getText();
+                v9 = txt_basicSal.getText();
+                gender="";
+                r_female.setSelected(false);
+                r_male.setSelected(false);
+                v10 = txt_address2.getText();
+                v11 = txt_pin.getText();
+                v12 = txt_desig.getText();
+                v13 = txt_status.getText();
+                v14 = txt_jobTitle.getText();
+                v15 = txt_hireDate.getText();
+
+                String query = "update Staff_information set id = '"+v1+"', first_name = '"+v2+"', surname = '"+v3+"',Dob = '"+v4+"',Email = '"+v5+"',"
+                        + "Contact = '"+v6+"',Address1 = '"+v7+"',Department = '"+v8+"',Salary = '"+v9+"',"
+                        + "Address2 = '"+v10+"',PIN = '"+v11+"',Designation = '"+v12+"',Status = '"+v13+"',"
+                        + "Date_hired = '"+v14+"',job_title = '"+v15+"' where id = '"+v1+"'";
+                pst = con.prepareStatement(query);
+                pst.execute();
+                JOptionPane.showMessageDialog(null, "Record updated successfully");
+            }
+            catch(Exception e){
+                JOptionPane.showMessageDialog(null, e);
+            }
+        }
+    }//GEN-LAST:event_btn_updateActionPerformed
 
     /**
      * @param args the command line arguments
@@ -632,12 +712,13 @@ public class AddEmployee extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_add;
+    private javax.swing.JButton btn_addImage;
+    private javax.swing.JButton btn_clear;
     private javax.swing.JButton btn_delete;
     private javax.swing.JButton btn_search;
+    private javax.swing.JButton btn_update;
     private javax.swing.JLabel img;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel17;
