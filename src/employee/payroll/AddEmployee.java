@@ -93,7 +93,7 @@ public class AddEmployee extends javax.swing.JFrame {
         txt_search = new javax.swing.JTextField();
         btn_update = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel5.setText("Contact No.:");
 

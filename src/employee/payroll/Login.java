@@ -10,10 +10,13 @@ import java.awt.Toolkit;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.Locale;
 
 /**
  *
@@ -196,6 +199,23 @@ public class Login extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null,"Success");
                     MainMenu j = new MainMenu();
                     j.setVisible(true);
+                    this.dispose();
+                    
+                    Date currentDate = GregorianCalendar.getInstance().getTime();
+                    DateFormat df = DateFormat.getDateInstance();
+                    String date = df.format(currentDate);
+                    Date d = new Date();
+                    SimpleDateFormat sdf = new SimpleDateFormat("HH:MM:SS");
+                    String time = sdf.format(d);
+                    
+                    String value0 = time;
+                    String values = date;
+                    
+                    int value = Emp.empID;
+                    
+                    String reg ="insert into Audit (emp_id,date,status) values ('"+value+"','"+value0+"/"+values+"','Logged IN')";
+                    pst = con.prepareStatement(reg);
+                    pst.execute();
                     this.dispose();
                 }
                 else{
